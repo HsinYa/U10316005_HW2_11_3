@@ -57,4 +57,10 @@ public class Account {
 	public void deposit(double amount){
 		balance += amount;
 	}
+	
+	//Display the total balance, monthly interest, date
+	public String toString(){
+		return "\nThe total balance: $" + this.getBalance() +" ,the monthly interest: $" 
+				+  this.getMonthlyInterest() + "\nDate: " + this.getDateCreated();
+	}
 }
