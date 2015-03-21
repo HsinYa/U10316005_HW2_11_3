@@ -1,6 +1,6 @@
 
 public class CheckingAccount extends Account {
-  //Data fields
+	 //Data fields
 	private int id = 0;
 	private double balance = 0;
 	private double annualInterestRate = 0;
@@ -56,5 +56,12 @@ public class CheckingAccount extends Account {
 	//Deposit a specified amount to the checking account
 	public void deposit(double amount){
 		balance += amount;
-	}	
+	}
+	
+	//Override the toString method defined in the superclass
+	@Override
+	//Display the total balance, monthly interest, date
+	public String toString(){
+		return super.toString();
+	}
 }
