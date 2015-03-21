@@ -1,5 +1,7 @@
+import java.util.Scanner;
 
 public class CheckingAccount extends Account {
+	Scanner input = new Scanner(System.in);
 	 //Data fields
 	private int id = 0;
 	private double balance = 0;
@@ -51,7 +53,15 @@ public class CheckingAccount extends Account {
 	}
 	//Withdraw a specified amount from the checking account
 	public void withdraw(double amount){
-		balance -= amount;
+		if((balance - amount)>=0){
+			balance -= amount;
+		}
+		else{
+			System.out.print("您的餘額不足，請重新輸入一次!!\n");
+			System.out.print("Withdraw: $");
+			double withdraw3 = input.nextDouble();
+			withdraw(withdraw3);
+		}	
 	}
 	//Deposit a specified amount to the checking account
 	public void deposit(double amount){
