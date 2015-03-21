@@ -1,6 +1,8 @@
+import java.util.Scanner;
 
 public class SavingsAccount extends Account {
-  //Data fields
+	Scanner input = new Scanner(System.in);
+  	//Data fields
 	private int id = 0;
 	private double balance = 0;
 	private double annualInterestRate = 0;
@@ -49,11 +51,19 @@ public class SavingsAccount extends Account {
 	public double getMonthlyInterest(){
 		return balance*(annualInterestRate/1200);
 	}
-	//Withdraw a specified amount from the account
+	//Withdraw a specified amount from the savings account
 	public void withdraw(double amount){
-		balance -= amount;
+		if((balance - amount)>=0){
+			balance -= amount;
+		}
+		else{
+			System.out.print("您的餘額不足，請重新輸入一次!!\n");
+			System.out.print("Withdraw: $");
+			double withdraw2 = input.nextDouble();
+			withdraw(withdraw2);
+		}	
 	}
-	//Deposit a specified amount to the account
+	//Deposit a specified amount to the savings account
 	public void deposit(double amount){
 		balance += amount;
 	}
