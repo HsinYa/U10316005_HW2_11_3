@@ -1,18 +1,19 @@
-import java.sql.Date;
 
 public class Account {
 	//Data fields
 	private int id = 0;
 	private double balance = 0;
 	private double annualInterestRate = 0;
-	private Date dateCreated;
+	private java.util.Date dateCreated;
 	
 	//Constructor
 	public Account(){
+		dateCreated = new java.util.Date();
 	}
 	public Account(int id,double balance){
 		this.id = id;
 		this.balance = balance;
+		dateCreated = new java.util.Date();
 	}
 	
 	//Accessor and mutator methods for id, balance, annualInterestRate
@@ -37,7 +38,7 @@ public class Account {
 	}
 	
 	//The accessor method for dateCreated
-	public Date getDateCreated(){
+	public java.util.Date getDateCreated(){
 		return dateCreated ;
 	}
 	//Return the monthly interest rate
